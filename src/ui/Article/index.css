@@ -13,13 +13,13 @@
   padding: 0;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .sidebar-content {
     padding: 0;
     overflow-y: auto;
   }
   .article-sidebar {
-    max-height: 100vh!important;
+    max-height: 80vh!important;
     height: -webkit-fill-available;
     padding-bottom: 40px;
   }

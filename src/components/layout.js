@@ -10,6 +10,8 @@ import PropTypes from "prop-types"
 import Header from "./header"
 import Footer from "../ui/Footer";
 import Menu from "../ui/Menu";
+import Hidden from "@material-ui/core/Hidden";
+import Toolbar from "@material-ui/core/Toolbar";
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -20,6 +22,10 @@ const Layout = ({ children }) => {
       <Menu open={open} />
       <div className={`App ${open ? 'open' : ''}`}>
         <Header menu={open} toggleMenu={toggleMenu} />
+        <Toolbar />
+        <Hidden mdUp>
+          <Toolbar />
+        </Hidden>
         <main style={{ flexGrow: 1 }}>{children}</main>
         <Footer />
       </div>

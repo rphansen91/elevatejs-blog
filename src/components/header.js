@@ -15,7 +15,7 @@ import { ToggleTheme } from "../ui/Settings"
 import { Hidden } from "@material-ui/core"
 
 const Header = ({ menu, toggleMenu }) => (
-  <AppBar position="static" className="">
+  <AppBar className="">
     <Toolbar>
       <Grid container spacing={0}>
         <Grid item md={9} xs={12}>
@@ -55,7 +55,7 @@ const Header = ({ menu, toggleMenu }) => (
               />
             </Link>
             <Hidden mdUp>
-              <Box position="absolute" right={16} top={6}>
+              <Box position="absolute" right={16} top={16}>
                 <ToggleTheme labelPlacement="start" color={"default"} />
               </Box>
             </Hidden>
@@ -86,6 +86,11 @@ const Header = ({ menu, toggleMenu }) => (
             <ToggleTheme labelPlacement="start" color={"default"} />
           </Hidden>
         </Grid>
+        <Grid xs={12}>
+          <Hidden mdUp>
+            <Box mb={1} />
+          </Hidden>
+          </Grid>
       </Grid>
     </Toolbar>
   </AppBar>

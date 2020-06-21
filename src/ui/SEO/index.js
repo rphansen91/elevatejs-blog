@@ -1,12 +1,13 @@
 import React from "react";
 import Helmet from "react-helmet";
 
-const seoURL = path => (process.env.PUBLIC_URL || "https://rphansen91.github.io/elevatejs-blog") + path;
+const defaultUrl = process.env.PUBLIC_URL || "https://elevatejs.com"
+const seoURL = path => defaultUrl + path;
 const seoImageURL = (images, provider) => {
   if (images && typeof images === "string") return images;
   if (images && images[provider] && typeof images[provider] === "string")
     return images[provider];
-  return (process.env.PUBLIC_URL || "https://rphansen91.github.io/elevatejs-blog") + "/elevatejs_bkgd_1.91.png";
+  return defaultUrl + "/elevatejs_bkgd_1.91.png";
 };
 
 const getMetaTags = ({
@@ -75,7 +76,7 @@ export default ({
       itemscope: undefined,
       itemtype: schema ? `http://schema.org/${schema}` : ""
     }}
-    title={`ElevateJS | ${title.slice(0, 60)}`}
+    title={`${title.slice(0, 60)}`}
     link={[{ rel: "canonical", href: seoURL(path) }]}
     meta={getMetaTags({
       title: title.slice(0, 60),
@@ -90,14 +91,14 @@ export default ({
       twitter
     })}
   >
-    <script>{`
+    {/* <script>{`
       (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-7183056818143738",
         enable_page_level_ads: true
       });
-    `}</script>
+    `}</script> */}
     <script>{`
-      var subscribersSiteId = "7dde6afa-5044-4c8f-abaa-81576fbf673e";
+      var subscribersSiteId = "ab98af2c-2040-4d48-a68d-49a61af61ee5";
     `}</script>
   </Helmet>
 );

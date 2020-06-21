@@ -12,17 +12,16 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-        <script
+        {/* <script
           src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
           async
-        />
+        /> */}
         <script src="https://cdn.subscribers.com/assets/subscribers.js" async />
         <script
-          src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-555b3dd213990409"
+          src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5eefaed8f80a8a32"
           async
         />
-        <script src="https://js.stripe.com/v3/" async />
-        <script src="https://tracking.coinapp.co/events.js" async />
+        {/* <script src="https://js.stripe.com/v3/" async /> */}
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

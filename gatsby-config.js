@@ -5,7 +5,7 @@ require("dotenv").config({
 console.log(process.env.PUBLIC_URL)
 
 module.exports = {
-  pathPrefix: "/elevatejs-blog",
+  // pathPrefix: "/elevatejs-blog",
   siteMetadata: {
     title: `ElevateJS`,
     siteUrl: process.env.PUBLIC_URL,
