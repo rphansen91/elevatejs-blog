@@ -5,6 +5,7 @@ require("dotenv").config({
 console.log(process.env.PUBLIC_URL)
 
 module.exports = {
+  pathPrefix: "/elevatejs-blog",
   siteMetadata: {
     title: `ElevateJS`,
     siteUrl: process.env.PUBLIC_URL,
@@ -12,24 +13,16 @@ module.exports = {
     author: `@rphansen91`,
   },
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
-    'gatsby-theme-material-ui',
-    'gatsby-plugin-svg-sprite',
+    "gatsby-theme-material-ui",
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GATSBY_GA,
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -42,7 +35,26 @@ module.exports = {
         icon: `src/images/icon_1024.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-relative-images',
+          },
+          {
+            resolve: "gatsby-remark-images",
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -52,22 +64,26 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-static-folders',
+      resolve: "gatsby-source-gh-readme",
       options: {
-        folders: [
-          './src/images',
-        ]
+        gitHubToken: `${process.env.GITHUB_API_TOKEN}`
       }
     },
     {
-      resolve: `gatsby-plugin-s3`,
+      resolve: "gatsby-plugin-static-folders",
       options: {
-          bucketName: 'elevatejs.com',
-          protocol: 'https',
-          hostname: 'www.elevatejs.com',
+        folders: ["./src/images"],
       },
     },
- 
+    // {
+    //   resolve: `gatsby-plugin-s3`,
+    //   options: {
+    //       bucketName: 'elevatejs.com',
+    //       protocol: 'https',
+    //       hostname: 'www.elevatejs.com',
+    //   },
+    // },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

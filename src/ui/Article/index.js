@@ -25,6 +25,7 @@ function SimpleMediaCard(props) {
   const color = isActive
     ? theme.palette.primary.main
     : theme.palette.text.secondary;
+    console.log(image)
   return (
     <Card
       className="article"
@@ -38,8 +39,9 @@ function SimpleMediaCard(props) {
       {image && (
         <CardMedia
           style={{
-            height: imageSize,
-            width: large ? "inherit" : imageSize,
+            paddingTop: "56.5%",
+            height: "auto",
+            width: "100%",
             ...imageStyle
           }}
           image={image}

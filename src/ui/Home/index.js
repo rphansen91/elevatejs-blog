@@ -8,7 +8,7 @@ import Layout from "../Layout"
 import ArticleSidebar from "../Article/Sidebar"
 import "./style.css"
 
-export default ({ coins, pair }) => (
+export default () => (
   <Layout
     content={
       <>

@@ -24,51 +24,48 @@ export default ({ data }) => {
       </Box>
       <Box p={3}>
         <Grid container spacing={3}>
-          {orderBy(posts, "publishedAt", "desc").reduce(
-            (acc, a, i) => {
-              acc.push(
-                <Grid
-                  item
-                  lg={3}
-                  md={4}
-                  xs={12}
-                  style={{ marginBottom: "0.3em" }}
-                  key={i}
+          {orderBy(posts, "publishedAt", "desc").reduce((acc, a, i) => {
+            acc.push(
+              <Grid
+                item
+                lg={3}
+                md={4}
+                xs={12}
+                style={{ marginBottom: "0.3em" }}
+                key={i}
+              >
+                <Link
+                  aria-label="Read More"
+                  className="d-block"
+                  to={`${a.path}`}
                 >
-                  <Link
-                    aria-label="Read More"
-                    className="d-block"
-                    to={`${a.path}`}
-                  >
-                    <Article
-                      imageSize={160}
-                      image={a.urlToImage}
-                      title={a.title}
-                      style={{ width: "100%" }}
-                      actions={
-                        <CardActions>
-                          <Button
-                            color="secondary"
-                            aria-label="Read More"
-                            variant="contained"
-                          >
-                            Read More
-                          </Button>
-                        </CardActions>
-                      }
-                    />
-                  </Link>
-                </Grid>
-                // <div className="col-lg-4 col-md-6 mb-4" key={i + "ad"}>
-                //   <NewsDisplayAd
-                //     style={{ maxWidth: "100%", margin: "auto", width: 350 }}
-                //   />
-                // </div>
-              )
-              return acc
-            },
-            []
-          )}
+                  <Article
+                    imageSize={160}
+                    image={a.urlToImage?.childImageSharp?.fluid?.src}
+                    title={a.title}
+                    style={{ width: "100%" }}
+                    actions={
+                      <CardActions>
+                        <Button
+                          color="secondary"
+                          aria-label="Read More"
+                          variant="contained"
+                        >
+                          Read More
+                        </Button>
+                      </CardActions>
+                    }
+                  />
+                </Link>
+              </Grid>
+              // <div className="col-lg-4 col-md-6 mb-4" key={i + "ad"}>
+              //   <NewsDisplayAd
+              //     style={{ maxWidth: "100%", margin: "auto", width: 350 }}
+              //   />
+              // </div>
+            )
+            return acc
+          }, [])}
         </Grid>
       </Box>
       <BottomBannerDisplayAd />
@@ -79,6 +76,7 @@ export default ({ data }) => {
 export const query = graphql`
   query {
     allMarkdownRemark(
+      filter: {frontmatter: {type: { eq: "post" }} },
       sort: { order: DESC, fields: [frontmatter___publishedAt] }
       limit: 1000
     ) {
@@ -89,7 +87,13 @@ export const query = graphql`
             title
             description
             author
-            urlToImage
+            urlToImage {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             sourceName
             path
           }

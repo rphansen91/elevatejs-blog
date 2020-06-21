@@ -1,7 +1,7 @@
 import React from "react";
 import Ad from "./Ad";
 
-export const TopBannerDisplayAd = () => (
+export const TopBannerDisplayAd = () => null /*(
   <Ad>
     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
       <ins className="adsbygoogle top-banner-display-ad"
@@ -11,7 +11,7 @@ export const TopBannerDisplayAd = () => (
         data-full-width-responsive="true"></ins>
     </div>
   </Ad>
-)
+)*/
 
 // export const TopBannerDisplayAd = () => (
 //   <Ad>
@@ -28,7 +28,7 @@ export const TopBannerDisplayAd = () => (
 //   </Ad>
 // );
 
-export const BottomBannerDisplayAd = () => (
+export const BottomBannerDisplayAd = () => null /*(
   <Ad>
     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
       <ins
@@ -41,9 +41,9 @@ export const BottomBannerDisplayAd = () => (
       />
     </div>
   </Ad>
-);
+);*/
 
-export const NewsDisplayAd = ({ style }) => (
+export const NewsDisplayAd = ({ style }) => null /*(
   <Ad>
     <ins
       className="adsbygoogle"
@@ -54,9 +54,9 @@ export const NewsDisplayAd = ({ style }) => (
       data-full-width-responsive="true"
     />
   </Ad>
-);
+);*/
 
-export const PortfolioBannerAd = ({}) => (
+export const PortfolioBannerAd = ({}) => null /*(
   <Ad>
     <ins
       className="adsbygoogle"
@@ -67,4 +67,4 @@ export const PortfolioBannerAd = ({}) => (
       data-full-width-responsive="true"
     />
   </Ad>
-);
+);*/

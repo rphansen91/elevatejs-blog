@@ -22,7 +22,13 @@ export const pageQuery = graphql`
         title
         description
         author
-        urlToImage
+        urlToImage {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         sourceName
         path
       }

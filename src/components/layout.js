@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
       <Menu open={open} />
       <div className={`App ${open ? 'open' : ''}`}>
         <Header menu={open} toggleMenu={toggleMenu} />
-        <main className="flex-grow-1">{children}</main>
+        <main style={{ flexGrow: 1 }}>{children}</main>
         <Footer />
       </div>
     </>

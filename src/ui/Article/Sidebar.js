@@ -55,7 +55,7 @@ export default ({ q, activePost, loading, error, filter = v => v }) => {
               <Article
                 isActive={isActive}
                 title={a.title}
-                image={i < 4 && a.urlToImage}
+                image={i < 4 && a.urlToImage?.childImageSharp?.fluid?.src}
                 actions={
                   <CardActions>
                     <Button
@@ -80,6 +80,7 @@ export default ({ q, activePost, loading, error, filter = v => v }) => {
 export const query = graphql`
   query Sidebar {
     allMarkdownRemark(
+      filter: {frontmatter: {type: { eq: "post" }} },
       sort: { order: DESC, fields: [frontmatter___publishedAt] }
       limit: 1000
     ) {
@@ -90,7 +91,13 @@ export const query = graphql`
             title
             description
             author
-            urlToImage
+            urlToImage  {
+              childImageSharp {
+                fluid(maxWidth: 540, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             sourceName
             path
           }
