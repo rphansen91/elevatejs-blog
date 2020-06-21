@@ -34,9 +34,14 @@ a {
   visibility: visible;
 }
 
-.App-header {
-  background-color: #222;
-  color: white;
+.app-header {
+  /* background-color: #222; */
+  /* color: white; */
+  padding-left: 60px;
+}
+
+.App.open .app-header {
+  padding-left: 250px;
 }
 
 .App-title {

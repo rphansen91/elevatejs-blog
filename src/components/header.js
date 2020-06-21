@@ -15,16 +15,16 @@ import { ToggleTheme } from "../ui/Settings"
 import { Hidden } from "@material-ui/core"
 
 const Header = ({ menu, toggleMenu }) => (
-  <AppBar className="">
+  <AppBar className="app-header">
     <Toolbar>
       <Grid container spacing={0}>
         <Grid item md={9} xs={12}>
-          <Box display="flex">
+          <Box display="flex" alignItems="center">
             <IconButton
               onClick={toggleMenu}
               color="default"
               aria-label="Menu"
-              style={{ width: 40, color: "#fff" }}
+              style={{ width: 40, height: 40, color: "#fff" }}
             >
               {menu ? (
                 <NavigationClose color="inherit" />
