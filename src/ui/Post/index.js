@@ -23,9 +23,9 @@ const Post = ({ loading, post = {}, path }) => {
           <SEO
             schema="Article"
             title={`${post.title || ""}`}
-            description={post.content}
+            description={post.description}
             path={path}
-            images={post.urlToImage?.childImageSharp?.fluid?.src}
+            images={(process.env.PUBLIC_URL || '') + post.urlToImage?.childImageSharp?.fluid?.src}
           />
           <TopBannerDisplayAd />
           {loading && <CircularProgress />}

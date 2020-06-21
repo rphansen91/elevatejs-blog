@@ -8,7 +8,7 @@ export default function Template({ data, error }) {
   const { frontmatter, html: htmlContent } = markdownRemark || {}
   return (
     <Layout>
-      <Post post={{ ...frontmatter, htmlContent }} path={`/post/${frontmatter.publishedAt}`} />
+      <Post post={{ ...frontmatter, htmlContent }} path={`${frontmatter.path}`} />
     </Layout>
   )
 }

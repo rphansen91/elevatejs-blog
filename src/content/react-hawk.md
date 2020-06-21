@@ -3,7 +3,7 @@ title: React Hawk
 publishedAt: 2020-06-20
 description: React state management library
 author: Ryan P. Hansen
-urlToImage: ../images/react-hawk-logo.png
+urlToImage: ../images/react-hawk.png
 sourceName: React Hawk
 path: /blog/react-hawk
 type: post

@@ -1,12 +1,12 @@
 import React from "react";
 import Helmet from "react-helmet";
 
-const seoURL = path => (process.env.PUBLIC_URL || "https://hodlstream.com") + path;
+const seoURL = path => (process.env.PUBLIC_URL || "https://rphansen91.github.io/elevatejs-blog") + path;
 const seoImageURL = (images, provider) => {
   if (images && typeof images === "string") return images;
   if (images && images[provider] && typeof images[provider] === "string")
     return images[provider];
-  return (process.env.PUBLIC_URL || "https://hodlstream.com") + "/icon_540.png";
+  return (process.env.PUBLIC_URL || "https://rphansen91.github.io/elevatejs-blog") + "/icon_540.png";
 };
 
 const getMetaTags = ({
@@ -27,11 +27,11 @@ const getMetaTags = ({
     { itemprop: "image", content: seoImageURL(images, "google") },
     { name: "description", content: description },
     { property: "twitter:card", content: "summary_large_image" },
-    { property: "twitter:site", content: "@hodl_stream" },
+    { property: "twitter:site", content: "@elevatejs" },
     { property: "twitter:title", content: title },
     { property: "twitter:description", content: description },
     { property: "twitter:creator", content: twitter },
-    { property: "twitter:image", content: seoImageURL(images, "twitter") },
+    // { property: "twitter:image", content: seoImageURL(images, "twitter") },
     { property: "og:title", content: title },
     { property: "og:type", content: contentType || "website" },
     { property: "og:url", content: url },
@@ -55,7 +55,7 @@ const getMetaTags = ({
 export default ({
   schema,
   title = "ElevateJS",
-  description = "Track your crypto portfolio and visualize how it changes over time.",
+  description = "Elevate JavaScript delivers in depth breakdowns of popular open source libraries.",
   path = "/",
   twitter = "@elevatejs",
   images = {
@@ -75,7 +75,7 @@ export default ({
       itemscope: undefined,
       itemtype: schema ? `http://schema.org/${schema}` : ""
     }}
-    title={title.slice(0, 60)}
+    title={`ElevateJS | ${title.slice(0, 60)}`}
     link={[{ rel: "canonical", href: seoURL(path) }]}
     meta={getMetaTags({
       title: title.slice(0, 60),

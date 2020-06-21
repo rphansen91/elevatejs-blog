@@ -2,7 +2,7 @@ const path = require(`path`)
 const projects = ["ts-mongo-codegen", "react-hawk", "data-hoc", "redux-delta"]
 
 exports.createPages = async (gatsbyApi) => {
-  await createProjectMarkdownPages(gatsbyApi)
+  // await createProjectMarkdownPages(gatsbyApi)
   await createMarkdownPages(gatsbyApi)
 }
 
