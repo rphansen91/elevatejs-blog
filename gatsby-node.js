@@ -2,7 +2,7 @@ const path = require(`path`)
 const projects = ["ts-mongo-codegen", "react-hawk", "data-hoc", "redux-delta"]
 
 exports.createPages = async (gatsbyApi) => {
-  // await createProjectMarkdownPages(gatsbyApi)
+  await createProjectMarkdownPages(gatsbyApi)
   await createMarkdownPages(gatsbyApi)
 }
 
@@ -27,6 +27,7 @@ async function createProjectMarkdownPages({ actions, graphql }) {
       throw new Error("Things broke, see console output above")
     }
     if (result.data.githubReadme) {
+      console.log(result.data.githubReadme)
       const { title, description, readme } = result.data.githubReadme
       if (title) {
         createPage({
@@ -69,7 +70,6 @@ async function createMarkdownPages({ actions, graphql }) {
   }
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    console.log(node)
     if (node.frontmatter.path) {
       createPage({
         path: node.frontmatter.path,

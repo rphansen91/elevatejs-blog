@@ -23,4 +23,8 @@
     height: -webkit-fill-available;
     padding-bottom: 40px;
   }
+  .toc {
+    position: sticky;
+    top: 0;
+  }
 }

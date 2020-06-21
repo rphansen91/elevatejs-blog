@@ -25,7 +25,7 @@ const Post = ({ loading, post = {}, path }) => {
             title={`${post.title || ""}`}
             description={post.description}
             path={path}
-            images={(process.env.PUBLIC_URL || '') + post.urlToImage?.childImageSharp?.fluid?.src}
+            images={'https://rphansen91.github.io' + post.urlToImage?.childImageSharp?.fluid?.src}
           />
           <TopBannerDisplayAd />
           {loading && <CircularProgress />}

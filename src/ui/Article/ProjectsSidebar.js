@@ -5,13 +5,14 @@ import { graphql, useStaticQuery } from "gatsby"
 export default (props) => {
   const data = useStaticQuery(query)
   const posts = data.allMarkdownRemark.edges.map(({ node }) => node.frontmatter)
-  return <ArticleList {...props} posts={posts} title="Articles" />
+  return <ArticleList {...props} posts={posts} title="Projects" />
 }
 
+
 export const query = graphql`
-  query SidebarArticles {
+  query SidebarProjects {
     allMarkdownRemark(
-      filter: {frontmatter: {type: { eq: "post" }} },
+      filter: {frontmatter: {type: { eq: "project" }} },
       sort: { order: DESC, fields: [frontmatter___publishedAt] }
       limit: 1000
     ) {

@@ -4,7 +4,7 @@ import SEO from "../SEO";
 
 export default () => (
   <div style={{ textAlign: "left", padding: "1em" }}>
-    <SEO title={"Terms | Hodl Stream"} path="/terms" />
+    <SEO title={"ElevateJS | Terms"} path="/terms" />
     <section />
 
     <Typography paragraph variant="h1" color="textPrimary">

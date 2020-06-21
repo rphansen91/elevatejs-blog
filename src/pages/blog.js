@@ -1,21 +1,42 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
+import MainLayout from "../components/layout"
 import SEO from "../ui/SEO"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
+import Hidden from "@material-ui/core/Hidden"
 import CardActions from "@material-ui/core/CardActions"
 import Box from "@material-ui/core/Box"
 import Grid from "@material-ui/core/Grid"
+import TwitterFeed from "../ui/Social/TwitterFeed"
 import { TopBannerDisplayAd, BottomBannerDisplayAd } from "../ads/slots"
 import Article from "../ui/Article"
+import ProjectsSidebar from "../ui/Article/ProjectsSidebar"
+import Layout from "../ui/Layout"
 import orderBy from "lodash/orderBy"
 
 export default ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(({ node }) => node.frontmatter)
   return (
-    <Layout>
+    <MainLayout>
       <SEO title={"ElevateJS | Blog"} path={"/blog/"} />
+      <Layout
+        mountains
+        content={<Blog posts={posts} />}
+        sidebar={
+          <Box className="article-sidebar" p={2}>
+            <TwitterFeed username="elevatejs" />
+            <Box pt={2} />
+          </Box>
+        }
+      ></Layout>
+    </MainLayout>
+  )
+}
+
+const Blog = ({ posts }) => {
+  return (
+    <>
       <TopBannerDisplayAd />
       <Box pt={3}>
         <Typography variant="h1" color="textPrimary" align="center">
@@ -69,14 +90,14 @@ export default ({ data }) => {
         </Grid>
       </Box>
       <BottomBannerDisplayAd />
-    </Layout>
+    </>
   )
 }
 
 export const query = graphql`
   query {
     allMarkdownRemark(
-      filter: {frontmatter: {type: { eq: "post" }} },
+      filter: { frontmatter: { type: { eq: "post" } } }
       sort: { order: DESC, fields: [frontmatter___publishedAt] }
       limit: 1000
     ) {

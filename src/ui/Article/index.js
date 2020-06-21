@@ -25,7 +25,6 @@ function SimpleMediaCard(props) {
   const color = isActive
     ? theme.palette.primary.main
     : theme.palette.text.secondary;
-    console.log(image)
   return (
     <Card
       className="article"

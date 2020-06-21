@@ -4,7 +4,7 @@ import SEO from "../SEO";
 
 const Success = ({ onChange = v => v }) => (
   <div>
-    <SEO title={"Success | Hodl Stream"} path={"/success"} />
+    <SEO title={"ElevateJS | Success"} path={"/success"} />
     <section />
     <section>
       <div className="container">

@@ -75,11 +75,12 @@ export const Shop = ({ products, data }) => (
 
 export default ({ products }) => (
   <Layout
+    mountains
     content={
       <>
         <TopBannerDisplayAd />
         <Box pt={3}>
-          <Typography variant="h4" color="textPrimary" className="text-center">
+          <Typography variant="h1" color="textPrimary" className="text-center">
             Shop
           </Typography>
         </Box>
