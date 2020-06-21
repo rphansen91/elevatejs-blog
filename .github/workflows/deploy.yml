@@ -1,10 +1,14 @@
-name: Build
+name: Release Master
 
-on: ['push']
+on:
+  push:
+    branches:
+      - 'master'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -24,12 +28,9 @@ jobs:
       - name: Install
         run: |
           yarn install
-      - name: Build
+      - name: Deploy
         env:
           GATSBY_GA: UA-82279514-2
           PUBLIC_URL: https://elevatejs.com
         run: |
-          yarn build
-      # - name: Deploy
-      #   run: |
-      #     yarn deploy
+          yarn deploy
