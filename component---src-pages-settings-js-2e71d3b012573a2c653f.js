@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{pM26:function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),l=n.n(a),u=n("Bl7J"),c=n("1uMg"),i=n("5ItF");t.default=function(){return l.a.createElement(u.a,null,l.a.createElement(c.a,{title:"ElevateJS | Settings",path:"/settings/"}),l.a.createElement(i.b,null))}}}]);
+//# sourceMappingURL=component---src-pages-settings-js-2e71d3b012573a2c653f.js.map
