@@ -6,21 +6,21 @@ import Button from "@material-ui/core/Button"
 import Box from "@material-ui/core/Box"
 import Hidden from "@material-ui/core/Hidden"
 import { Link } from "gatsby"
-import elevateJsBkgd from "../../images/elevatejs_bkgd_1.91.png"
+// import elevateJsBkgd from "../../images/elevatejs_bkgd_1.91.png"
 import "./style.css"
 
 export default () => (
   <Box className="page-footer" position="relative">
-    <img
+    {/* <img
       src={elevateJsBkgd}
       alt="Elevate JS Background"
       className="page-footer-img"
-    />
+    /> */}
     <Grid container spacing={0} style={{ position: "relative" }}>
-      <Grid item sm={4} md={3} xs={12}>
+      <Grid item sm={6} xs={12}>
         <div
           style={{
-            margin: 'auto',
+            margin: "auto",
             display: "flex",
             maxWidth: 160,
             // justifyContent: "center",
@@ -29,24 +29,81 @@ export default () => (
             color: "#fff",
           }}
         >
-          <Button color="inherit" to="/" component={Link} activeClassName="MuiButton-outlined">
+          <Button
+            color="inherit"
+            to="/"
+            component={Link}
+            activeClassName="MuiButton-outlined"
+          >
             Home
           </Button>
-          <Button color="inherit" to="/blog/" component={Link} activeClassName="MuiButton-outlined">
+          <Button
+            color="inherit"
+            to="/blog/"
+            component={Link}
+            activeClassName="MuiButton-outlined"
+          >
             Blog
           </Button>
-          <Button color="inherit" to="/shop/" component={Link} activeClassName="MuiButton-outlined">
+          <Button
+            color="inherit"
+            to="/shop/"
+            component={Link}
+            activeClassName="MuiButton-outlined"
+          >
             Shop
           </Button>
-          <Button color="inherit" to="/about/" component={Link} activeClassName="MuiButton-outlined">
+          <Button
+            color="inherit"
+            to="/about/"
+            component={Link}
+            activeClassName="MuiButton-outlined"
+          >
             About
           </Button>
-          <Button color="inherit" to="/settings/" component={Link} activeClassName="MuiButton-outlined">
+          <Button
+            color="inherit"
+            to="/settings/"
+            component={Link}
+            activeClassName="MuiButton-outlined"
+          >
             Settings
           </Button>
         </div>
         <Hidden smUp>
-          <Box style={{ height: 160 }} />
+          <Box style={{ height: 10 }} />
+        </Hidden>
+      </Grid>
+      <Grid item sm={6} xs={12}>
+        <Link
+          to="/"
+          aria-label="Home"
+          style={{
+            verticalAlign: "middle",
+            display: "flex",
+            flex: 1,
+            justifyContent: "center",
+            textDecoration: "none",
+          }}
+        >
+          <Brand
+            style={{
+              color: "#fff",
+              cursor: "pointer",
+              whiteSpace: "nowrap",
+              display: "flex",
+              alignItems: "center",
+              fontSize: 40,
+            }}
+          />
+        </Link>
+        <Box color="#fff">
+          <Typography variant="caption" color="inherit">
+            ElevateJS © - 2020 All Rights Reserved
+          </Typography>
+        </Box>
+        <Hidden smUp>
+          <Box style={{ height: 10 }} />
         </Hidden>
       </Grid>
     </Grid>

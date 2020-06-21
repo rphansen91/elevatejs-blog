@@ -24,11 +24,11 @@ export default () => (
           pt={5}
         >
           <Container maxWidth="sm">
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h1" gutterBottom>
               JavaScript at first glance appears massive and impossible to
               tackle.
             </Typography>
-            <Button component={Link} to="/blog/">
+            <Button component={Link} to="/blog/" color="secondary">
               Conquer The Mountain With Us!
             </Button>
             {/* <Typography variant="h5" gutterBottom>
