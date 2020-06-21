@@ -6,7 +6,7 @@ import Shop from "../ui/Shop"
 
 export default ({  }) => (
   <Layout>
-    <SEO title="Shop" path={"/shop"} />
+    <SEO title="ElevateJS | Shop" path={"/shop/"} />
     <Shop products={[]} />
   </Layout>
 )

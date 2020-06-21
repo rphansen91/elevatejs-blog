@@ -5,7 +5,7 @@ description: React state management library
 author: Ryan P. Hansen
 urlToImage: ../images/react-hawk.png
 sourceName: React Hawk
-path: /blog/react-hawk
+path: /blog/react-hawk/
 type: post
 ---
 

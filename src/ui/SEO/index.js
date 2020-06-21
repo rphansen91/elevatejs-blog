@@ -6,7 +6,7 @@ const seoImageURL = (images, provider) => {
   if (images && typeof images === "string") return images;
   if (images && images[provider] && typeof images[provider] === "string")
     return images[provider];
-  return (process.env.PUBLIC_URL || "https://rphansen91.github.io/elevatejs-blog") + "/icon_540.png";
+  return (process.env.PUBLIC_URL || "https://rphansen91.github.io/elevatejs-blog") + "/elevatejs_bkgd_1.91.png";
 };
 
 const getMetaTags = ({
@@ -31,13 +31,13 @@ const getMetaTags = ({
     { property: "twitter:title", content: title },
     { property: "twitter:description", content: description },
     { property: "twitter:creator", content: twitter },
-    // { property: "twitter:image", content: seoImageURL(images, "twitter") },
+    { property: "twitter:image", content: seoImageURL(images, "twitter") },
     { property: "og:title", content: title },
     { property: "og:type", content: contentType || "website" },
     { property: "og:url", content: url },
     { property: "og:image", content: seoImageURL(images, "facebook") },
     { property: "og:description", content: description },
-    { property: "og:site_name", content: "Hodl Stream" },
+    { property: "og:site_name", content: "ElevateJS" },
     { property: "fb:app_id", content: "857737644405026" }
   ];
 

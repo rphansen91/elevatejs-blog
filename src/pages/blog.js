@@ -15,7 +15,7 @@ export default ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(({ node }) => node.frontmatter)
   return (
     <Layout>
-      <SEO title={"Blog"} path={"/blog"} />
+      <SEO title={"ElevateJS | Blog"} path={"/blog/"} />
       <TopBannerDisplayAd />
       <Box pt={3}>
         <Typography variant="h1" color="textPrimary" align="center">

@@ -5,7 +5,7 @@ import About from "../ui/About"
 
 const AboutPage = () => (
   <Layout>
-    <SEO title="About" path={"/about"} />
+    <SEO title="ElevateJS | About" path={"/about/"} />
     <About />
   </Layout>
 )

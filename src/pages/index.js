@@ -5,7 +5,7 @@ import Home from "../ui/Home"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="ElevateJS | Home" />
     <Home />
   </Layout>
 )
