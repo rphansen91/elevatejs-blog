@@ -9,8 +9,6 @@ path: /blog/react-hawk
 type: post
 ---
 
-[![React Hawk](/react-hawk-logo.png)](https://github.com/rphansen91/react-hawk)
-
 [![Travis](https://travis-ci.com/rphansen91/react-hawk.svg)](https://travis-ci.com/rphansen91/react-hawk)
 [![npm](https://img.shields.io/npm/v/react-hawk.svg)](https://www.npmjs.com/package/react-hawk)
 [![downloads](https://img.shields.io/npm/dw/react-hawk.svg)](https://www.npmjs.com/package/react-hawk)
