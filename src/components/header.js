@@ -79,8 +79,11 @@ const Header = ({ menu, toggleMenu }) => (
           <Button component={Link} to="/blog/" color="inherit" activeClassName="MuiButton-outlined">
             Blog
           </Button>
-          <Button component={Link} to="/shop/" color="inherit" activeClassName="MuiButton-outlined">
+          {/* <Button component={Link} to="/shop/" color="inherit" activeClassName="MuiButton-outlined">
             Shop
+          </Button> */}
+          <Button component={Link} to="/about/" color="inherit" activeClassName="MuiButton-outlined">
+            About
           </Button>
           <Hidden smDown>
             <ToggleTheme labelPlacement="start" color={"default"} />

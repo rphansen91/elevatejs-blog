@@ -45,14 +45,14 @@ export default () => (
           >
             Blog
           </Button>
-          <Button
+          {/* <Button
             color="inherit"
             to="/shop/"
             component={Link}
             activeClassName="MuiButton-outlined"
           >
             Shop
-          </Button>
+          </Button> */}
           <Button
             color="inherit"
             to="/about/"

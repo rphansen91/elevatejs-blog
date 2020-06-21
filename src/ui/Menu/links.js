@@ -42,7 +42,7 @@ export const MainListItems = (props => (
         </ListItemText>
       </ListItem>
     </Link>
-    <Link to="/shop/" aria-label="shop">
+    {/* <Link to="/shop/" aria-label="shop">
       <ListItem button>
         <ListItemIcon>
           <StoreIcon />
@@ -51,7 +51,7 @@ export const MainListItems = (props => (
           <Typography color="textPrimary">Shop</Typography>
         </ListItemText>
       </ListItem>
-    </Link>
+    </Link> */}
   </List>
 ));
 
