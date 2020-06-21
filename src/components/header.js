@@ -39,7 +39,7 @@ const Header = ({ menu, toggleMenu }) => (
                 verticalAlign: "middle",
                 display: "flex",
                 flex: 1,
-                marginLeft: -40,
+                marginLeft: -60,
                 justifyContent: "center",
                 textDecoration: "none",
               }}

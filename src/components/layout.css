@@ -34,16 +34,6 @@ a {
   visibility: visible;
 }
 
-.app-header {
-  /* background-color: #222; */
-  /* color: white; */
-  padding-left: 60px;
-}
-
-.App.open .app-header {
-  padding-left: 250px;
-}
-
 .App-title {
   margin: 0;
   font-size: 1.5em;
@@ -131,13 +121,22 @@ a:hover {
   text-decoration: none;
 }
 
-@media screen and (min-width: 768px) {  
+@media screen and (min-width: 960px) {  
 .border-left-2 {
   border-left: rgba(255, 255, 255, 0.7) solid 0.2em;
 }
+.app-header {
+  /* background-color: #222; */
+  /* color: white; */
+  padding-left: 60px;
 }
 
-@media screen and (max-width: 768px) {  
+.App.open .app-header {
+  padding-left: 250px;
+}
+}
+
+@media screen and (max-width: 960px) {  
   .App {
     padding-left: 0;
   }
