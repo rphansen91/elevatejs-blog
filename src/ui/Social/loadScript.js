@@ -20,7 +20,7 @@ export class LoadScript extends Component {
 
 const loadedScripts = {}
 export default function loadScript (src) {
-    if (loadedScripts[src]) return loadedScripts[src]
+    // if (loadedScripts[src]) return loadedScripts[src]
     loadedScripts[src] = new Promise(function (res, rej) {
         if (typeof document !== 'undefined') {
             const script = document.createElement('script')
