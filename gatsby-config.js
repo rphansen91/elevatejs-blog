@@ -66,7 +66,7 @@ module.exports = {
     {
       resolve: "gatsby-source-gh-readme",
       options: {
-        gitHubToken: `${process.env.GITHUB_API_TOKEN}`
+        gitHubToken: `${process.env.GITHUB_TOKEN}`
       }
     },
     {
