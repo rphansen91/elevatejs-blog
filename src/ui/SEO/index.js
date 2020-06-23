@@ -56,7 +56,7 @@ const getMetaTags = ({
 export default ({
   schema,
   title = "ElevateJS",
-  description = "Elevate JavaScript delivers in depth breakdowns of popular open source libraries.",
+  description = "Elevate JavaScript delivers in depth breakdowns of popular open source libraries. (TypeScript, React, GraphQL)",
   path = "/",
   twitter = "@elevatejs",
   images = {

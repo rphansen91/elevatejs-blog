@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title: `ElevateJS`,
     siteUrl: process.env.PUBLIC_URL,
-    description: `Elevate JavaScript delivers in depth breakdowns of popular open source libraries.`,
+    description: `Elevate JavaScript delivers in depth breakdowns of popular open source libraries. (TypeScript, React, GraphQL)`,
     author: `@rphansen91`,
   },
   plugins: [

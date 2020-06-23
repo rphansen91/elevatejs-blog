@@ -22,75 +22,87 @@ import Email from "@material-ui/icons/Email"
 import ryanImg from "../../images/ryan.jpeg"
 
 export const About = () => (
-  <div className="container">
-    <section className="text-center">
+  <Container maxWidth="sm">
+    <section>
       <Box mb={2}>
         <Typography variant="subtitle1" color="textSecondary" gutterBottom>
           Elevate JavaScript delivers in depth breakdowns of popular open source
           libraries.
         </Typography>
       </Box>
-      <Container maxWidth="sm">
-        <Paper>
-          <Box p={2} pb={0}>
-            <Typography style={{ textAlign: "left" }}>Editor</Typography>
-          </Box>
-          <List disablePadding>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar src={ryanImg}>RPH</Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="Ryan P. Hansen"
-                secondary={
-                  <Link href="mailto:ryan@elevatejs.com">
-                    ryan@elevatejs.com
-                  </Link>
-                }
-              />
-              <ListItemSecondaryAction>
-                <IconButton
-                  size="small"
-                  component="a"
-                  href="https://github.com/rphansen91"
-                >
-                  <GitHub />
-                </IconButton>
-                <IconButton
-                  size="small"
-                  component="a"
-                  href="https://twitter.com/@elevatejs"
-                >
-                  <Twitter />
-                </IconButton>
-                <IconButton
-                  size="small"
-                  component="a"
-                  href="mailto:ryan@elevatejs.com"
-                >
-                  <Email />
-                </IconButton>
-              </ListItemSecondaryAction>
-            </ListItem>
-          </List>
-        </Paper>
-      </Container>
+      <Box mb={2}>
+        <Typography variant="subtitle1" color="textSecondary" gutterBottom>
+          TypeScript, React, and GraphQL when used together make for an
+          extremely effective web stack. The tools used within the JavaScript
+          ecosystem iterate rapidly, which makes it difficult to stay on top of
+          the latest and greatest.
+        </Typography>
+      </Box>
+      <Box mb={2}>
+        <Typography variant="subtitle1" color="textSecondary" gutterBottom>
+          At ElevateJS we strongly believe having a strong understanding of
+          these core tools (TypeScript, React, and GraphQL) will allow any
+          development team to adapt quickly to changing business goals and
+          deliver high quality resilient software to the end user.
+        </Typography>
+      </Box>
+      <Paper>
+        <Box p={2} pb={0}>
+          <Typography style={{ textAlign: "left" }}>Editor</Typography>
+        </Box>
+        <List disablePadding>
+          <ListItem>
+            <ListItemAvatar>
+              <Avatar src={ryanImg}>RPH</Avatar>
+            </ListItemAvatar>
+            <ListItemText
+              primary="Ryan P. Hansen"
+              secondary={
+                <Link href="mailto:ryan@elevatejs.com">ryan@elevatejs.com</Link>
+              }
+            />
+            <ListItemSecondaryAction>
+              <IconButton
+                size="small"
+                component="a"
+                href="https://github.com/rphansen91"
+              >
+                <GitHub />
+              </IconButton>
+              <IconButton
+                size="small"
+                component="a"
+                href="https://twitter.com/@elevatejs"
+              >
+                <Twitter />
+              </IconButton>
+              <IconButton
+                size="small"
+                component="a"
+                href="mailto:ryan@elevatejs.com"
+              >
+                <Email />
+              </IconButton>
+            </ListItemSecondaryAction>
+          </ListItem>
+        </List>
+      </Paper>
     </section>
     {/* <section className="about">
       <div className="about-content">
-        <FbFeed page="elevatejs" name="ElevateJS" tabs="timeline, events" />
+      <FbFeed page="elevatejs" name="ElevateJS" tabs="timeline, events" />
       </div>
       <div className="about-content">
-        <TwitterFeed username="elevatejs" />
+      <TwitterFeed username="elevatejs" />
       </div>
       <div className="about-content">
-        <InstaPosts
-          username="elevatejs"
-          link="edfee4f5133f008b0c0787bf13bede2b061e23953e3298f30356155e5f35197e"
-        />  
+      <InstaPosts
+      username="elevatejs"
+      link="edfee4f5133f008b0c0787bf13bede2b061e23953e3298f30356155e5f35197e"
+      />  
       </div>
     </section> */}
-  </div>
+  </Container>
 )
 
 export default () => (
