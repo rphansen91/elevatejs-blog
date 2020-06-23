@@ -2,20 +2,79 @@ import React from "react"
 import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 import { TopBannerDisplayAd, BottomBannerDisplayAd } from "../../ads/slots"
-import FbFeed from "../Social/FbFeed"
-import InstaPosts from "../Social/InstaPosts"
 import TwitterFeed from "../Social/TwitterFeed"
-import ArticleSidebar from "../Article/Sidebar"
 import Layout from "../Layout"
 import "./style.css"
+import ListItem from "@material-ui/core/ListItem"
+import IconButton from "@material-ui/core/IconButton"
+import ListItemAvatar from "@material-ui/core/ListItemAvatar"
+import Container from "@material-ui/core/Container"
+import Paper from "@material-ui/core/Paper"
+import Avatar from "@material-ui/core/Avatar"
+import ListItemText from "@material-ui/core/ListItemText"
+import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction"
+import CardHeader from "@material-ui/core/CardHeader"
+import List from "@material-ui/core/List"
+import Link from "@material-ui/core/Link"
+import GitHub from "@material-ui/icons/GitHub"
+import Twitter from "@material-ui/icons/Twitter"
+import Email from "@material-ui/icons/Email"
+import ryanImg from "../../images/ryan.jpeg"
 
 export const About = () => (
   <div className="container">
     <section className="text-center">
-      <Typography variant="subtitle1" color="textSecondary">
-        Elevate JavaScript delivers in depth breakdowns of popular open source
-        libraries.
-      </Typography>
+      <Box mb={2}>
+        <Typography variant="subtitle1" color="textSecondary" gutterBottom>
+          Elevate JavaScript delivers in depth breakdowns of popular open source
+          libraries.
+        </Typography>
+      </Box>
+      <Container maxWidth="sm">
+        <Paper>
+          <Box p={2} pb={0}>
+            <Typography style={{ textAlign: "left" }}>Editor</Typography>
+          </Box>
+          <List disablePadding>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar src={ryanImg}>RPH</Avatar>
+              </ListItemAvatar>
+              <ListItemText
+                primary="Ryan P. Hansen"
+                secondary={
+                  <Link href="mailto:ryan@elevatejs.com">
+                    ryan@elevatejs.com
+                  </Link>
+                }
+              />
+              <ListItemSecondaryAction>
+                <IconButton
+                  size="small"
+                  component="a"
+                  href="https://github.com/rphansen91"
+                >
+                  <GitHub />
+                </IconButton>
+                <IconButton
+                  size="small"
+                  component="a"
+                  href="https://twitter.com/@elevatejs"
+                >
+                  <Twitter />
+                </IconButton>
+                <IconButton
+                  size="small"
+                  component="a"
+                  href="mailto:ryan@elevatejs.com"
+                >
+                  <Email />
+                </IconButton>
+              </ListItemSecondaryAction>
+            </ListItem>
+          </List>
+        </Paper>
+      </Container>
     </section>
     {/* <section className="about">
       <div className="about-content">
