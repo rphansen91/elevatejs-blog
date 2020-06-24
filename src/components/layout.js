@@ -22,10 +22,7 @@ const Layout = ({ children }) => {
       <Menu open={open} />
       <div className={`App ${open ? 'open' : ''}`}>
         <Header menu={open} toggleMenu={toggleMenu} />
-        <Toolbar />
-        <Hidden mdUp>
-          <Toolbar />
-        </Hidden>
+        <div className="clear-header" />
         <main style={{ flexGrow: 1 }}>{children}</main>
         <Footer />
       </div>

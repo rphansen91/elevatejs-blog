@@ -121,6 +121,10 @@ a:hover {
   text-decoration: none;
 }
 
+.clear-header {
+  padding-top: 68px
+}
+
 @media screen and (min-width: 960px) {  
 .border-left-2 {
   border-left: rgba(255, 255, 255, 0.7) solid 0.2em;
@@ -134,7 +138,7 @@ a:hover {
 .App.open .app-header {
   padding-left: 250px;
 }
-}
+} 
 
 @media screen and (max-width: 960px) {  
   .App {
@@ -157,6 +161,9 @@ a:hover {
   .icons.responsive {
     /* flex-direction: column; */
     /* flex-wrap: wrap; */
+  }
+  .clear-header {
+    padding-top: 112px;
   }
 }
 
