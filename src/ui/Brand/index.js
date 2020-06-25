@@ -8,12 +8,10 @@ export default ({ onClick, style }) => (
     onClick={onClick}
     style={{ ...style, display: "flex", alignItems: "center", justifyContent: "center" }}
   >
-    ELE
-    <img
-      alt="Logo"
+    ELE<img
+      alt="VA"
       src={icon}
       style={{ height: "2em", verticalAlign: "center" }}
-    />{" "}
-    TE
+    />TE
   </Typography>
 )
