@@ -1,7 +1,7 @@
 ---
 title: Generate All CRUD and Pagination Operations (10 minutes or less)
 publishedAt: 2020-06-29
-description: React state management library
+description: GraphQL and its schema driven development methodology lends it's self nicely for code generation. After creating dozens of MongoDB backed GraphQL Apis over the past few years their are quite a few patterns that have stood out at least when.
 author: Ryan P. Hansen
 urlToImage: ../images/nepal.jpg
 sourceName: TS Mongo Codegen
