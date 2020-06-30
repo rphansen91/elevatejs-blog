@@ -15,16 +15,16 @@ GraphQL and its schema driven development methodology allows for a lot of the co
 
 [**ts-mongo-codegen**](https://github.com/rphansen91/ts-mongo-codegen) uses your GraphQL schema and with the inclusion of (opt-in) directives generates all of the CRUD operations for a seamless integration between GraphQL types and MongoDB.
 
-* Insert Resource
-* Insert Many Resources
-* Find Resource By ObjectID
-* Find Many Resources By ObjectIDs
-* Paginated and Sorted Queries
-* Filtered Totals
-* Update Resource By ObjectID
-* Update Many Resources By ObjectIDs
-* Remove Resource By ObjectID
-* Remove Many Resources By ObjectIDs
+* Insert Resource `insertMountain`
+* Insert Many Resources `insertManyMountains`
+* Find Resource By ObjectID `findMountainById`
+* Find Many Resources By ObjectIDs `findMountainsByIds`
+* Paginated and Sorted Queries `findMountains`
+* Filtered Totals `findMountains`
+* Update Resource By ObjectID `updateMountain`
+* Update Many Resources By ObjectIDs `updateManyMountains`
+* Remove Resource By ObjectID `removeMountain`
+* Remove Many Resources By ObjectIDs `removeManyMountains`
 
 With these basic yet useful patters generated it allows the developer to focus on how the end user interacts with the data. 
 
@@ -32,7 +32,7 @@ Less time as a result is spent doing error prone tasks like manipulating data ty
 
 *Let's move some mountains!*
 
-You can follow along by forking the [`mountains-api`](https://github.com/rphansen91/mountains-api).
+You can follow along by forking the [**mountains-api**](https://github.com/rphansen91/mountains-api).
 
 Here is the `Mountain` type that we will be using and augmenting today.
 
@@ -143,7 +143,12 @@ addResolveFunctionsToSchema({
 
 And with that we are done. We can view our results in the GraphQL playground.
 
-## **C**REATE
+## Playground
+
+
+<iframe alt="Mountain API Playground" src="https://graphqlbin.com/v2/lp24i6" width="100%" height="800px" frameborder="0"></iframe>
+
+<!-- ## **C**REATE
 
 ## Insert Resource
 
@@ -189,7 +194,7 @@ And with that we are done. We can view our results in the GraphQL playground.
 
 ### Remove Many Resources By ObjectIDs
 
-<iframe alt="Remove Many Resources By ObjectIDs Playground" src="https://graphqlbin.com/v2/YMyxuA" width="100%" height="800px" frameborder="0"></iframe>
+<iframe alt="Remove Many Resources By ObjectIDs Playground" src="https://graphqlbin.com/v2/YMyxuA" width="100%" height="800px" frameborder="0"></iframe> -->
 
 ## Conclusion
 
