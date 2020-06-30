@@ -9,8 +9,6 @@ path: /blog/mongo-backed-graphql/
 type: post
 ---
 
-# Generate All CRUD and Pagination Operations (10 minutes or less)
-
 GraphQL and its schema driven development methodology allows for a lot of the common tasks around data resources to be abstracted. 
 
 [**ts-mongo-codegen**](https://github.com/rphansen91/ts-mongo-codegen) uses your GraphQL schema and with the inclusion of (opt-in) directives generates all of the CRUD operations for a seamless integration between GraphQL types and MongoDB.
@@ -209,4 +207,4 @@ And with that we are done. We can view our results in the GraphQL playground.
 
 In this post we generated all of the basic CRUD operations with very little effort. Our clients whether that be web or mobile will now have a very predictable backend backed by MongoDB.
 
-In this article we did not go into creating the context dependency necessary for the resolvers. We will go over that in a different post but if you are interested can find the implementation [**here**](https://github.com/rphansen91/mountains-api/blob/master/src/context.ts).
+In this article we did not go into creating the context dependency necessary for the resolvers. We will go over that in a different post but if you are interested, you can find the implementation [**here**](https://github.com/rphansen91/mountains-api/blob/master/src/context.ts).
