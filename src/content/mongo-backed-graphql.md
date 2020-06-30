@@ -95,12 +95,18 @@ Now that we have our `Mountain` type defined. We will set up our `codegen.json` 
 }
 ```
 
+```bash
+yarn install
+yarn generate
+```
+
 With the code generated we can put it all together into an executable schema.
 
 ```js
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { addResolveFunctionsToSchema } from 'apollo-server'
 import { graphqlTypeDate, graphqlTypeObjectId, makeAugmentedSchema, mongoTypeDefs } from 'ts-mongo-codegen'
+// The following import is the file generated in previous step
 import { mountainMutationResolvers, mountainQueryResolvers, mountainResolvers } from './types.generated'
 import { composeResolvers } from '@graphql-tools/resolvers-composition'
 import { mountainSchema } from './gql/mountains'
