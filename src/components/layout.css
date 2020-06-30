@@ -172,3 +172,7 @@ a:hover {
   background: -webkit-linear-gradient(270deg, #005c97, #363795);
   background: linear-gradient(270deg, #005c97, #363795);
 }
+
+a {
+  color: #316799;
+}
