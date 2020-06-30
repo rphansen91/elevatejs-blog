@@ -191,3 +191,8 @@ And with that we are done. We can view our results in the GraphQL playground.
 
 <iframe alt="Remove Many Resources By ObjectIDs Playground" src="https://graphqlbin.com/v2/YMyxuA" width="100%" height="800px" frameborder="0"></iframe>
 
+## Conclusion
+
+In this post we generated all of the basic CRUD operations with very little effort. Our clients whether that be web or mobile will now have a very predictable backend backed by MongoDB.
+
+In this article we did not go into creating the context dependency necessary for the resolvers. We will go over that in a different post but if you are interested can find the implementation [**here**](https://github.com/rphansen91/mountains-api/blob/master/src/context.ts).
