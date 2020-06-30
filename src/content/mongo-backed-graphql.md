@@ -15,6 +15,8 @@ GraphQL and its schema driven development methodology lends it's self nicely for
 
 *Let's move some mountains!*
 
+You can follow along by forking the [`mountains-api`](https://github.com/rphansen91/mountains-api).
+
 ## **C**REATE
 
 ## Insert Resource
