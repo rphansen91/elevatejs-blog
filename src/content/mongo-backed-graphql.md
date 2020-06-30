@@ -38,7 +38,7 @@ Here is the `Mountain` type that we will be using and augmenting today.
 
 ## Type Defs
 
-```javascript
+```js
 import gql from 'graphql-tag'
 
 export const mountainSchema = gql`
@@ -97,7 +97,7 @@ Now that we have our `Mountain` type defined. We will set up our `codegen.json` 
 
 With the code generated we can put it all together into an executable schema.
 
-```javascript
+```js
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { addResolveFunctionsToSchema } from 'apollo-server'
 import { graphqlTypeDate, graphqlTypeObjectId, makeAugmentedSchema, mongoTypeDefs } from 'ts-mongo-codegen'

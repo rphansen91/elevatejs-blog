@@ -8,6 +8,7 @@
 
 import React from 'react'
 import { ProfileProvider } from './src/components/profile'
+import "prismjs/themes/prism-twilight.css"
 
 export const wrapRootElement = ({ element }) => {
   return (

@@ -56,7 +56,7 @@ type Book @collection(name: "books") {
 
 **./src/stores/mongo.ts** 
 
-```javascript
+```js
 import { connect } from 'ts-mongo-codegen'
 import { mongoFactory } from '../gql/types'
 
