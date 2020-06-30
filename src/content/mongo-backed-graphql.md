@@ -34,9 +34,10 @@ Less time as a result is spent doing error prone tasks like manipulating data ty
 
 You can follow along by forking the [**mountains-api**](https://github.com/rphansen91/mountains-api).
 
-Here is the `Mountain` type that we will be using and augmenting today.
 
 ## Type Defs
+
+Define the `Mountain` type that we will be augmenting.
 
 ```js
 import gql from 'graphql-tag'
