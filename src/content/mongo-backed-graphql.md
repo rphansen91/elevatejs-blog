@@ -1,7 +1,7 @@
 ---
 title: Generate All CRUD and Pagination Operations (10 minutes or less)
 publishedAt: 2020-06-29
-description: GraphQL and its schema driven development methodology lends it's self nicely for code generation. After creating dozens of MongoDB backed GraphQL Apis over the past few years their are quite a few patterns that have stood out at least when.
+description: With these basic yet useful patters generated it allows the developer to focus on how the end user interacts with the data. 
 author: Ryan P. Hansen
 urlToImage: ../images/nepal.jpg
 sourceName: TS Mongo Codegen
@@ -11,11 +11,135 @@ type: post
 
 # Generate All CRUD and Pagination Operations (10 minutes or less)
 
-GraphQL and its schema driven development methodology lends it's self nicely for code generation. After creating dozens of MongoDB backed GraphQL Apis over the past few years their are quite a few patterns that have stood out at least when.
+GraphQL and its schema driven development methodology allows for a lot of the common tasks around data resources to be abstracted. 
+
+[ts-mongo-codegen](https://github.com/rphansen91/ts-mongo-codegen) uses your GraphQL schema and with the inclusion of (opt-in) directives generate all of the CRUD operations for the specified type.
+
+* Insert Resource
+* Insert Many Resources
+* Find Resource By ObjectID
+* Find Many Resources By ObjectIDs
+* Paginated and Sorted Queries
+* Filtered Totals
+* Update Resource By ObjectID
+* Update Many Resources By ObjectIDs
+* Remove Resource By ObjectID
+* Remove Many Resources By ObjectIDs
+
+With these basic yet useful patters generated it allows the developer to focus on how the end user interacts with the data. 
+
+Less time as a result is spent doing error prone tasks like manipulating data types, and more time is spent delivering *visible* value.
 
 *Let's move some mountains!*
 
 You can follow along by forking the [`mountains-api`](https://github.com/rphansen91/mountains-api).
+
+Here is the `Mountain` type that we will be using and augmenting today.
+
+## Type Defs
+
+```javascript
+import gql from 'graphql-tag'
+
+export const mountainSchema = gql`
+  type Mountain @collection(name: "mountains", crud: true) {
+    id: ObjectId
+    name: String @insert @set @filter
+    meters: Float @insert @set @filter
+    feet: Float @insert @set @filter
+    location: String @insert @set @filter
+  }
+`
+```
+
+## Directives
+
+### @collection
+
+With this directive declared [ts-mongo-codegen](https://github.com/rphansen91/ts-mongo-codegen) will generate interfaces and factory functions that can be made executable when starting the GraphQL server.
+
+#### Options
+
+- name: The name of the mongo collection
+- crud: Should generate crud types and resolvers
+
+### @insert
+
+The `@insert` directive tells [ts-mongo-codegen](https://github.com/rphansen91/ts-mongo-codegen) which fields should be included in the **C**REATE types.
+
+### @filter
+
+The `@filter` directive tells [ts-mongo-codegen](https://github.com/rphansen91/ts-mongo-codegen) which fields should be included in the **R**EAD types.
+
+### @set
+
+The `@set` directive tells [ts-mongo-codegen](https://github.com/rphansen91/ts-mongo-codegen) which fields should be included in the **U**PDATE types.
+
+## Generate
+
+Now that we have our `Mountain` type defined. We will set up our `codegen.json` which defines the options for our GraphQL Codegen. More documentation can be found [here](https://graphql-code-generator.com/).
+
+```json
+{
+  "schema": ["./node_modules/ts-mongo-codegen/dist/types/mongo-types.ts", "./src/gql/*.ts"],
+  "generates": {
+    "./src/types.generated.ts": {
+      "plugins": [
+        "typescript",
+        "typescript-operations",
+        "typescript-resolvers",
+        "ts-mongo-codegen"
+      ]
+    }
+  }
+}
+```
+
+With the code generated we can put it all together into an executable schema.
+
+```javascript
+import { makeExecutableSchema } from '@graphql-tools/schema'
+import { addResolveFunctionsToSchema } from 'apollo-server'
+import { graphqlTypeDate, graphqlTypeObjectId, makeAugmentedSchema, mongoTypeDefs } from 'ts-mongo-codegen'
+import { mountainMutationResolvers, mountainQueryResolvers, mountainResolvers } from './types.generated'
+import { composeResolvers } from '@graphql-tools/resolvers-composition'
+import { mountainSchema } from './gql/mountains'
+import { isAuthenticated } from './auth'
+
+// Make an executable schema with the mongo types and our custom mountain schema type
+const executableSchema = makeExecutableSchema({
+  typeDefs: [mongoTypeDefs, mountainSchema],
+})
+
+// Add CRUD operations to the Mountain type by augmenting the schema
+export const schema = makeAugmentedSchema(executableSchema)
+
+// The mountainResolvers, mountainMutationResolvers, and mountainQueryResolvers are generated types
+// Run `yarn generate` to update types or add more
+const resolvers = composeResolvers(
+  {
+    Date: graphqlTypeDate,
+    Mountain: mountainResolvers,
+    Mutation: {
+      ...mountainMutationResolvers,
+    },
+    ObjectId: graphqlTypeObjectId,
+    Query: {
+      ...mountainQueryResolvers,
+    },
+  },
+  {
+    // Make sure mutation requests are authenticated
+    Mutation: [isAuthenticated()],
+  }
+)
+
+// Finally we add our generated resolvers to the schema
+addResolveFunctionsToSchema({
+  resolvers,
+  schema,
+})
+```
 
 ## **C**REATE
 
@@ -65,6 +189,3 @@ You can follow along by forking the [`mountains-api`](https://github.com/rphanse
 
 <iframe alt="Remove Many Resources By ObjectIDs Playground" src="https://graphqlbin.com/v2/YMyxuA" width="100%" height="800px" frameborder="0"></iframe>
 
-With these basic yet useful patters generated it allows the developer to focus on how the end user interacts with the data. 
-
-Less time as a result is spent doing error prone tasks like manipulating data types, and more time is spent delivering value.
