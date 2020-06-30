@@ -146,7 +146,7 @@ And with that we are done. We can view our results in the GraphQL playground.
 ## Playground
 
 
-<iframe alt="Mountain API Playground" src="https://graphqlbin.com/v2/lp24i6" width="100%" height="800px" frameborder="0"></iframe>
+<iframe alt="Mountain API Playground" src="https://graphqlbin.com/v2/korvur" width="100%" height="800px" frameborder="0"></iframe>
 
 <!-- ## **C**REATE
 
