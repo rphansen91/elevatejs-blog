@@ -13,6 +13,8 @@ type: post
 
 GraphQL and its schema driven development methodology lends it's self nicely for code generation. After creating dozens of MongoDB backed GraphQL Apis over the past few years their are quite a few patterns that have stood out at least when.
 
+*Let's move some mountains!*
+
 ## **C**REATE
 
 ## Insert Resource
