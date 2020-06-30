@@ -96,6 +96,8 @@ Now that we have our `Mountain` type defined. We will set up our `codegen.json` 
 }
 ```
 
+Using the above configuration we are able to generate the necessary resolvers we will need to implement CRUD and fulfill our GraphQL schema.
+
 ```bash
 yarn install
 yarn generate
