@@ -13,7 +13,7 @@ type: post
 
 GraphQL and its schema driven development methodology allows for a lot of the common tasks around data resources to be abstracted. 
 
-[ts-mongo-codegen](https://github.com/rphansen91/ts-mongo-codegen) uses your GraphQL schema and with the inclusion of (opt-in) directives generate all of the CRUD operations for the specified type.
+[**ts-mongo-codegen**](https://github.com/rphansen91/ts-mongo-codegen) uses your GraphQL schema and with the inclusion of (opt-in) directives generate all of the CRUD operations for the specified type.
 
 * Insert Resource
 * Insert Many Resources
@@ -56,7 +56,7 @@ export const mountainSchema = gql`
 
 ### @collection
 
-With this directive declared [ts-mongo-codegen](https://github.com/rphansen91/ts-mongo-codegen) will generate interfaces and factory functions that can be made executable when starting the GraphQL server.
+With this directive declared [**ts-mongo-codegen**](https://github.com/rphansen91/ts-mongo-codegen) will generate interfaces and factory functions that can be made executable when starting the GraphQL server.
 
 #### Options
 
@@ -65,15 +65,15 @@ With this directive declared [ts-mongo-codegen](https://github.com/rphansen91/ts
 
 ### @insert
 
-The `@insert` directive tells [ts-mongo-codegen](https://github.com/rphansen91/ts-mongo-codegen) which fields should be included in the **C**REATE types.
+The `@insert` directive tells [**ts-mongo-codegen**](https://github.com/rphansen91/ts-mongo-codegen) which fields should be included in the **C**REATE types.
 
 ### @filter
 
-The `@filter` directive tells [ts-mongo-codegen](https://github.com/rphansen91/ts-mongo-codegen) which fields should be included in the **R**EAD types.
+The `@filter` directive tells [**ts-mongo-codegen**](https://github.com/rphansen91/ts-mongo-codegen) which fields should be included in the **R**EAD types.
 
 ### @set
 
-The `@set` directive tells [ts-mongo-codegen](https://github.com/rphansen91/ts-mongo-codegen) which fields should be included in the **U**PDATE types.
+The `@set` directive tells [**ts-mongo-codegen**](https://github.com/rphansen91/ts-mongo-codegen) which fields should be included in the **U**PDATE types.
 
 ## Generate
 
@@ -140,6 +140,8 @@ addResolveFunctionsToSchema({
   schema,
 })
 ```
+
+And with that we are done. We can view our results in the GraphQL playground.
 
 ## **C**REATE
 

@@ -173,6 +173,10 @@ a:hover {
   background: linear-gradient(270deg, #005c97, #363795);
 }
 
-a {
+.content-container a {
+  color: #f1c80f;
+}
+
+.content-container.light a {
   color: #316799;
 }

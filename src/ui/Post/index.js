@@ -12,10 +12,12 @@ import SEO from "../SEO"
 import Container from "@material-ui/core/Container"
 import Divider from "@material-ui/core/Divider"
 import Box from "@material-ui/core/Box"
+import { useProfile } from "../../components/profile"
 
 const first = a => a && a[0]
 
 const Post = ({ loading, post = {}, path }) => {
+  const [profile] = useProfile()
   return (
     <Layout
       content={
@@ -82,7 +84,7 @@ const Post = ({ loading, post = {}, path }) => {
               <Typography variant="subtitle1" color="textSecondary">
                 {post.content}
               </Typography>
-              <div dangerouslySetInnerHTML={{ __html: post.htmlContent }} />
+              <div className={profile.theme === "light" ? "content-container light" : "content-container"} style={{ fontSize: '1rem' }} dangerouslySetInnerHTML={{ __html: post.htmlContent }} />
             </section>
             <section className="text-center">
               {post.url && (
