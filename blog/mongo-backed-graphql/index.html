@@ -61,10 +61,13 @@
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">yarn</span> <span class="token function">install</span>
+<span class="token function">yarn</span> generate</code></pre></div>
 <p>With the code generated we can put it all together into an executable schema.</p>
 <div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> makeExecutableSchema <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@graphql-tools/schema'</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> addResolveFunctionsToSchema <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'apollo-server'</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> graphqlTypeDate<span class="token punctuation">,</span> graphqlTypeObjectId<span class="token punctuation">,</span> makeAugmentedSchema<span class="token punctuation">,</span> mongoTypeDefs <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ts-mongo-codegen'</span>
+<span class="token comment">// The following import is the file generated in previous step</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> mountainMutationResolvers<span class="token punctuation">,</span> mountainQueryResolvers<span class="token punctuation">,</span> mountainResolvers <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./types.generated'</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> composeResolvers <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@graphql-tools/resolvers-composition'</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> mountainSchema <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./gql/mountains'</span>
