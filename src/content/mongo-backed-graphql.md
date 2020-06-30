@@ -1,5 +1,5 @@
 ---
-title: Generate All CRUD and Pagination Operations (10 minutes or less)
+title: Generate GraphQL MongoDB CRUD and Pagination Operations (10 minutes or less)
 publishedAt: 2020-06-29
 description: Use your GraphQL types to automatically generate CRUD operations for a seamless integration between your schema and MongoDB.
 author: Ryan P. Hansen
