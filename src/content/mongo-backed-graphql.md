@@ -1,7 +1,7 @@
 ---
 title: Generate All CRUD and Pagination Operations (10 minutes or less)
 publishedAt: 2020-06-29
-description: With these basic yet useful patters generated it allows the developer to focus on how the end user interacts with the data. 
+description: Use your GraphQL types to automatically generate CRUD operations for a seamless integration between your schema and MongoDB.
 author: Ryan P. Hansen
 urlToImage: ../images/nepal.jpg
 sourceName: TS Mongo Codegen
@@ -13,7 +13,7 @@ type: post
 
 GraphQL and its schema driven development methodology allows for a lot of the common tasks around data resources to be abstracted. 
 
-[**ts-mongo-codegen**](https://github.com/rphansen91/ts-mongo-codegen) uses your GraphQL schema and with the inclusion of (opt-in) directives generate all of the CRUD operations for the specified type.
+[**ts-mongo-codegen**](https://github.com/rphansen91/ts-mongo-codegen) uses your GraphQL schema and with the inclusion of (opt-in) directives generates all of the CRUD operations for a seamless integration between GraphQL types and MongoDB.
 
 * Insert Resource
 * Insert Many Resources
